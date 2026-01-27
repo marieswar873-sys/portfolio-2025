@@ -7,16 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Custom premium colors inspired by the reference
-        'dark-bg': '#0a0a0a',
-        'card-bg': '#1a1a1a',
-        'accent': '#3b82f6', // A nice blue, can be adjusted
-        'text-primary': '#ffffff',
-        'text-secondary': '#a1a1aa',
+        'dark-bg': 'var(--bg-primary)',
+        'card-bg': 'var(--bg-card)',
+        'accent': 'var(--accent)',
+        'text-primary': 'var(--text-primary)',
+        'text-secondary': 'var(--text-secondary)',
+        'accent-glow': 'var(--accent-glow)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
+      }
     },
   },
   plugins: [],

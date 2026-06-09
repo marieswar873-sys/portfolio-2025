@@ -19,6 +19,15 @@ const About = () => {
                             <p>{linkedInData.summary.about}</p>
                             <p className="font-medium text-accent">{linkedInData.summary.objectives}</p>
                         </div>
+
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+                            {linkedInData.stats.map((stat, index) => (
+                                <div key={index} className="text-center sm:text-left">
+                                    <div className="text-2xl md:text-3xl font-bold text-accent">{stat.value}</div>
+                                    <div className="text-xs text-text-secondary mt-1">{stat.label}</div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">

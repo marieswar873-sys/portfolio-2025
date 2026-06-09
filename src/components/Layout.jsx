@@ -24,7 +24,7 @@ const Navbar = () => {
                 </motion.a>
 
                 <div className="hidden md:flex items-center space-x-2 bg-black/20 backdrop-blur-md p-1 rounded-full border border-white/5">
-                    {['About', 'Experience', 'Projects', 'Certifications', 'Contact'].map((item, index) => (
+                    {['About', 'Experience', 'Projects', 'Services', 'Certifications', 'Contact'].map((item, index) => (
                         <button
                             key={item}
                             onClick={() => scrollToSection(item.toLowerCase())}

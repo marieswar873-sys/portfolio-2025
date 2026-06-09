@@ -77,12 +77,19 @@ const ProjectCard = ({ project, index }) => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto">
-                    <a href={project.github} className="text-text-secondary hover:text-white transition-colors flex items-center gap-1 text-xs">
-                        <Github size={14} /> Code
-                    </a>
-                    <a href={project.link} className="text-text-secondary hover:text-white transition-colors flex items-center gap-1 text-xs">
-                        <ExternalLink size={14} /> Demo
-                    </a>
+                    {project.github && project.github !== '#' && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors flex items-center gap-1 text-xs">
+                            <Github size={14} /> Code
+                        </a>
+                    )}
+                    {project.link && project.link !== '#' && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors flex items-center gap-1 text-xs">
+                            <ExternalLink size={14} /> Demo
+                        </a>
+                    )}
+                    {(!project.github || project.github === '#') && (!project.link || project.link === '#') && (
+                        <span className="text-text-secondary/60 text-xs italic">Case study available on request</span>
+                    )}
                 </div>
             </div>
         </motion.div>
@@ -101,7 +108,7 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="h-screen w-full flex flex-col justify-center py-20 relative">
+        <section id="projects" className="min-h-screen w-full flex flex-col justify-center pt-24 pb-12 relative">
             <div className="max-w-[90%] mx-auto w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

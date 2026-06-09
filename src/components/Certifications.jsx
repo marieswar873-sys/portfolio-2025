@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award } from 'lucide-react';
+import { Award, GraduationCap } from 'lucide-react';
 import { linkedInData } from '../data/linkedin';
 
 const Certifications = () => {
@@ -35,6 +35,22 @@ const Certifications = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-10 flex items-start gap-4 p-6 bg-card-bg rounded-xl border border-white/5 glass"
+                >
+                    <div className="p-3 rounded-full bg-accent/10 text-accent">
+                        <GraduationCap size={24} />
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-lg">{linkedInData.education.degree}</h3>
+                        <p className="text-text-secondary text-sm mt-1">{linkedInData.education.institution}</p>
+                        <p className="text-text-secondary/70 text-xs mt-1">{linkedInData.education.period}</p>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
